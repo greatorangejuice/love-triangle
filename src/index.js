@@ -3,37 +3,10 @@
  * @returns number of love triangles
  */
 module.exports = function getLoveTrianglesCount(preferences = []) {
-  let count = 0;
-  let index = preferences.length;
-
-  for (let i = 0; i < index; i++) {
-    let m = preferences[i]; // 2
-    let n = preferences[m-1]; // 3
-    let k = preferences[n-1]; // 1
-
-    if ( m-1 == i && n == i ) {
-      count++
-    }
-
-    // if ( preferences[] == )
-
-    if ( preferences[k-1] == m && preferences[n-1] == )
-    // Сравниваю значение с индексом. То есть число K == индексу M. Значение M == индексу N. 
-    // Значение N == индексу K.
-  }
-  return count;
+  const result = preferences.reduce((acc, firstNumber, i) => {
+    secondNumber = preferences[firstNumber - 1] - 1;
+    trirdNumber = preferences[secondNumber] - 1;
+    return ((trirdNumber === i) ? acc + 1 : acc);
+  }, 0);
+  return result/3^0;
 };
-// indexOf!!!
-
-m  n  k
-2, 3, 1, 5, 6, 4
-
-1  2  3  4  5  6
-
-
-// Если индекс двойки равен значению единицы ...
-
-
-
-//  индекс: n k m
-//значение: k m n
